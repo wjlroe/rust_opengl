@@ -1,0 +1,7 @@
+target
+*.dll
+.vs/
+*.sln
+Thumbs.db
+.idea/**/*.*
+!.idea/runConfigurations/*.xml

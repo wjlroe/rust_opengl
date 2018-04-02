@@ -1,0 +1,15 @@
+[package]
+name = "rust_opengl"
+version = "0.1.0"
+authors = ["William Roe <git@wjlr.org.uk>"]
+
+[dependencies]
+cgmath = "0.16"
+gfx = "0.17"
+glutin = "0.13"
+gfx_window_glutin = "0.21"
+
+[[bin]]
+name = "rust_opengl"
+doctest = false
+doc = false

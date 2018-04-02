@@ -1,0 +1,4 @@
+* text=auto
+
+scripts/prepare_ci.sh text eol=lf
+.idea/**/*.xml text eol=lf
