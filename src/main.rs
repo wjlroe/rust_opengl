@@ -129,7 +129,8 @@ fn main() {
             if let Event::WindowEvent { event, .. } = event {
                 use VirtualKeyCode::*;
                 match event {
-                    WindowEvent::Closed
+                    WindowEvent::CloseRequested
+                    | WindowEvent::Destroyed
                     | WindowEvent::KeyboardInput {
                         input:
                             KeyboardInput {

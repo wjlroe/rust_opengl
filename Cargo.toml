@@ -6,8 +6,8 @@ authors = ["William Roe <git@wjlr.org.uk>"]
 [dependencies]
 cgmath = "0.16"
 gfx = "0.17"
-glutin = "0.13"
-gfx_window_glutin = "0.21"
+glutin = "0.16"
+gfx_window_glutin = "0.24"
 
 [[bin]]
 name = "rust_opengl"
