@@ -9,8 +9,10 @@ use gfx::traits::FactoryExt;
 use gfx::{format, Device};
 use gfx_window_glutin as gfx_glutin;
 use glutin::Api::OpenGl;
-use glutin::{ContextBuilder, Event, EventsLoop, GlContext, GlRequest, KeyboardInput,
-             VirtualKeyCode, WindowBuilder, WindowEvent};
+use glutin::{
+    ContextBuilder, Event, EventsLoop, GlContext, GlRequest, KeyboardInput, VirtualKeyCode,
+    WindowBuilder, WindowEvent,
+};
 use std::time::Instant;
 
 pub type ColorFormat = format::Rgba8;
@@ -108,23 +110,13 @@ fn main() {
     let s_y = near / range;
     let s_z = -(far + near) / (far - near);
     let p_z = -(2.0 * far * near) / (far - near);
+
+    #[cfg_attr(rustfmt, rustfmt_skip)]
     let proj_matrix = Matrix4::new(
-        s_x,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        s_y,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        s_z,
-        -1.0,
-        0.0,
-        0.0,
-        p_z,
-        0.0,
+        s_x, 0.0, 0.0, 0.0,
+        0.0, s_y, 0.0, 0.0,
+        0.0, 0.0, s_z, -1.0,
+        0.0, 0.0, p_z, 0.0,
     );
     println!("proj_matrix: {:?}", proj_matrix);
 
