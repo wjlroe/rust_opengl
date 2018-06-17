@@ -165,9 +165,6 @@ fn main() {
         let translate = Matrix4::from_translation(-cam_pos);
         let rotate = Matrix4::from_angle_y(-cam_yaw);
         let view_matrix = rotate * translate;
-        // proj_matrix: Matrix4 [[1.1331265, 0.0, 0.0, 0.0], [0.0, 1.5108353, 0.0, 0.0], [0.0, 0.0, -1.002002, -1.0], [0.0, 0.0, -0.2002002, 0.0]]
-        // view_matrix: Matrix4 [[1.0, 0.0, 0.0, 0.0], [0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 1.0, 0.0], [0.0, 0.0, -2.0, 1.0]]
-        // println!("view_matrix: {:?}", view_matrix);
 
         let locals = Locals {
             projection: proj_matrix.into(),
