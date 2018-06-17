@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="fmt" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
     <option name="channel" value="NIGHTLY" />
-    <option name="command" value="fmt --all -- --write-mode=overwrite --unstable-features" />
+    <option name="command" value="fmt --all -- --unstable-features" />
     <option name="nocapture" value="true" />
     <option name="backtrace" value="FULL" />
     <option name="workingDirectory" value="file://$PROJECT_DIR$" />
