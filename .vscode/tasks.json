@@ -17,6 +17,18 @@
         "kind": "build",
         "isDefault": true
       }
+    },
+    {
+      "type": "cargo",
+      "label": "cargo build",
+      "command": "cargo",
+      "args": [
+        "build"
+      ],
+      "problemMatcher": [
+        "$rustc"
+      ],
+      "group": "build"
     }
   ]
 }

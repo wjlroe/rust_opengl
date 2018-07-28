@@ -13,7 +13,11 @@
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
       "environment": [],
-      "externalConsole": false
+      "externalConsole": false,
+      "windows": {
+        "type": "cppvsdbg"
+      },
+      "preLaunchTask": "cargo build"
     }
   ]
 }
