@@ -39,6 +39,7 @@ gfx_defines!{
 }
 
 impl Vertex {
+    //noinspection Annotator
     fn new(p: [f32; 3], t: [f32; 3]) -> Vertex {
         Vertex {
             pos: [p[0], p[1], p[2], 1.0],

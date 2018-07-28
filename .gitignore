@@ -3,5 +3,4 @@ target
 .vs/
 *.sln
 Thumbs.db
-.idea/**/*.*
-!.idea/runConfigurations/*.xml
+/.idea/workspace.xml
