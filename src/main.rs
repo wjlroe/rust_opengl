@@ -50,14 +50,14 @@ impl Vertex {
 
 fn main() {
     let mut events_loop = EventsLoop::new();
-    let windowbuilder = WindowBuilder::new()
+    let window_builder = WindowBuilder::new()
         .with_title("Triangle Example".to_string())
         .with_dimensions(640, 480);
-    let contextbuilder = ContextBuilder::new()
+    let context_builder = ContextBuilder::new()
         .with_gl(GlRequest::Specific(OpenGl, (3, 2)))
         .with_vsync(true);
     let (window, mut device, mut factory, color_view, depth_view) =
-        gfx_glutin::init::<ColorFormat, DepthFormat>(windowbuilder, contextbuilder, &events_loop);
+        gfx_glutin::init::<ColorFormat, DepthFormat>(window_builder, context_builder, &events_loop);
     let shade_lang = device.get_info().shading_language;
     println!("shader lang is {:?}", shade_lang);
     println!("color_view: {:?}", color_view);
