@@ -8,6 +8,7 @@ use cgmath::{Angle, Deg, Matrix4, Rad, Vector3, Zero};
 use gfx::traits::FactoryExt;
 use gfx::{format, Device};
 use gfx_window_glutin as gfx_glutin;
+use glutin::dpi::LogicalSize;
 use glutin::Api::OpenGl;
 use glutin::{
     ContextBuilder, Event, EventsLoop, GlContext, GlRequest, KeyboardInput, VirtualKeyCode,
@@ -52,7 +53,7 @@ fn main() {
     let mut events_loop = EventsLoop::new();
     let window_builder = WindowBuilder::new()
         .with_title("Triangle Example".to_string())
-        .with_dimensions(640, 480);
+        .with_dimensions(LogicalSize::new(1280.0, 720.0));
     let context_builder = ContextBuilder::new()
         .with_gl(GlRequest::Specific(OpenGl, (3, 2)))
         .with_vsync(true);
@@ -102,7 +103,7 @@ fn main() {
     let near = 0.1;
     let far = 100.0;
     let fov = Rad::from(Deg(67.0));
-    let (width, height) = window
+    let LogicalSize { width, height } = window
         .get_inner_size()
         .expect("Couldn't get window inner size");
     let aspect = width as f32 / height as f32;
