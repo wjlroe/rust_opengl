@@ -4,3 +4,4 @@ target
 *.sln
 Thumbs.db
 /.idea/workspace.xml
+/.idea/dbnavigator.xml
