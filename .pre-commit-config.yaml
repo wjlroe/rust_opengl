@@ -1,7 +1,7 @@
 exclude: '^(\.idea|\.vscode|\.vs)/'
 repos:
 -   repo: git://github.com/pre-commit/pre-commit-hooks
-    sha: v1.4.0
+    sha: v2.0.0
     hooks:
     -   id: trailing-whitespace
     -   id: check-case-conflict
@@ -15,5 +15,5 @@ repos:
         description: Format files with rustfmt.
         entry: cargo fmt
         language: system
+        pass_filenames: false
         files: \.rs$
-        args: ['--', '--write-mode=overwrite']

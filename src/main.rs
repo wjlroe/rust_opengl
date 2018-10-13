@@ -11,8 +11,8 @@ use gfx_window_glutin as gfx_glutin;
 use glutin::dpi::LogicalSize;
 use glutin::Api::OpenGl;
 use glutin::{
-    ContextBuilder, Event, EventsLoop, GlContext, GlRequest, KeyboardInput, VirtualKeyCode,
-    WindowBuilder, WindowEvent,
+    ContextBuilder, Event, EventsLoop, GlContext, GlRequest, KeyboardInput,
+    VirtualKeyCode, WindowBuilder, WindowEvent,
 };
 use std::time::Instant;
 
@@ -58,7 +58,11 @@ fn main() {
         .with_gl(GlRequest::Specific(OpenGl, (3, 2)))
         .with_vsync(true);
     let (window, mut device, mut factory, color_view, depth_view) =
-        gfx_glutin::init::<ColorFormat, DepthFormat>(window_builder, context_builder, &events_loop);
+        gfx_glutin::init::<ColorFormat, DepthFormat>(
+            window_builder,
+            context_builder,
+            &events_loop,
+        );
     let shade_lang = device.get_info().shading_language;
     println!("shader lang is {:?}", shade_lang);
     println!("color_view: {:?}", color_view);
@@ -69,8 +73,7 @@ fn main() {
             include_bytes!("shader/anton.vert"),
             include_bytes!("shader/anton.frag"),
             pipe::new(),
-        )
-        .unwrap();
+        ).unwrap();
 
     let vertex_data = [
         Vertex::new([0.0, 1.0, 0.0], [1.0, 0.0, 0.0]),
@@ -81,7 +84,8 @@ fn main() {
         Vertex::new([0.0, -1.0, 0.0], [0.2, 0.2, 0.8]),
     ];
 
-    let (vbuf, slice) = factory.create_vertex_buffer_with_slice(&vertex_data, ());
+    let (vbuf, slice) =
+        factory.create_vertex_buffer_with_slice(&vertex_data, ());
 
     let data = pipe::Data {
         vbuf,
@@ -92,7 +96,8 @@ fn main() {
     println!("out_color: {:?}", data.out_color);
     println!("out_depth: {:?}", data.out_depth);
 
-    let mut encoder: gfx::Encoder<_, _> = factory.create_command_buffer().into();
+    let mut encoder: gfx::Encoder<_, _> =
+        factory.create_command_buffer().into();
 
     let mut last_frame_time = Instant::now();
     let cam_speed = 1.0;
@@ -126,7 +131,8 @@ fn main() {
     while running {
         let elapsed = last_frame_time.elapsed();
         last_frame_time = Instant::now();
-        let dt = elapsed.as_secs() as f32 + elapsed.subsec_nanos() as f32 * 1e-9;
+        let dt =
+            elapsed.as_secs() as f32 + elapsed.subsec_nanos() as f32 * 1e-9;
         events_loop.poll_events(|event| {
             if let Event::WindowEvent { event, .. } = event {
                 use VirtualKeyCode::*;
